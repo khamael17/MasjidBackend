@@ -1,0 +1,66 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Alegreya&family=Great+Vibes&family=Hanken+Grotesk&family=Prata&family=Sora:wght@300&display=swap');
+
+
+.prof img {
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+}
+.prof {
+  max-width: 75px;
+}
+
+.menu {
+  /* border: 1px solid red; */
+}
+.feed {
+  /* border: 1px solid blue; */
+}
+
+.hadith {
+  /* border: 1px solid green; */
+ 
+}
+.bg-color {
+  background-color: aliceblue;
+}
+
+.glow{
+  @keyframes spark {
+    50% {background-color:  10px 20px 30px black;}
+}
+}
+
+.salam{
+  
+font-family: 'Great Vibes', cursive;
+  font-size: 15px;
+  font-weight: 400;
+
+}
+
+.masjid-name{
+  
+
+  font-family: 'Hanken Grotesk', sans-serif;
+  font-size: 40px;
+}
+
+.announcement{
+  font-family: 'Sora', sans-serif;
+  font-weight: 100;
+}
+
+
+.imam-nav-name{
+  font-family: 'Prata', sans-serif;
+  font-weight: 100;
+  font-size: 10px;
+  
+}
+
