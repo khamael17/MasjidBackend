@@ -16,6 +16,8 @@ namespace Masjid.Models
         public DbSet<YouthProgram> YouthPrograms { get; set; }
         public DbSet<AftSchoolProgram> AftSchoolPrograms { get; set; }
         public DbSet<IslamicClasse>     IslamicClasses { get; set; }
+        public DbSet<Imam> Imams { get; set; }
+        public DbSet<Institution> Intitutions { get; set; }
 
     }
 }

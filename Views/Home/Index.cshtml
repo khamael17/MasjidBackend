@@ -1,14 +1,125 @@
 ﻿
+@model Masjid.Services.HomeService
+
+  @{
+        Layout = "";
+    }
+                    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Masjid</title>
+
+     <link rel="stylesheet" href="~/css/main.css" asp-append-version="true" />
+      <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+
+    <script defer src="./js/brands.js"></script>
+    <script defer src="./js/solid.js"></script>
+    <script defer src="./js/fontawesome.js"></script>
+
+</head>
+<body>
+ <header class="mb-1">
+      <nav class="bg-success d-flex justify-content-between">
+        <div class="prof-container text-center pl-1">
+          <div class="prof text-center">
+            <img
+              src="~/img/Allah.jfif"
+              alt=""
+              class="img-thumbnail rounded-circle d-md-block d-flex justify-content-end"
+            />
+          </div>
+          <h7 class="salam" >Peace Be Upon You</h7>
+        </div> 
 
 
+        <div class="row ">
+          <div class="col ">
+        <div class="title ">
+          <h3 class="strong  d-flex justify-content-center masjid-name">
+            @Model.GetProfile.InstitutionName
+          </h3>
+          <div class="prayer-time d-flex pl-4">
+            <div class="fajr mx-1">
+              <a href="#" class="d-flex">
+                <i class="fas fa-clock fa-1x text-dark mb-0"></i>
+                <h5 style="font-size: 15px" class="text-white font-italic mb-0">
+                  Fajr
+                </h5>
+              </a>
+              <h5 style="font-size: 15px" class="text-white font-italic mt-0">
+                @Model.GetPrayerTime.Asr
+              </h5>
+            </div>
 
-
-@{
-    Layout = "_Layout";
-}
-
-
-
+            <div class="fajr mx-1">
+              <a href="#" class="d-flex">
+                <i class="fas fa-clock fa-1x text-dark mb-0"></i>
+                <h5 style="font-size: 15px" class="text-white font-italic mb-0">
+                  Dhur
+                </h5>
+              </a>
+              <h5 style="font-size: 15px" class="text-white font-italic mt-0">
+              @Model.GetPrayerTime.Dhur
+              </h5>
+            </div>
+            <div class="fajr mx-1">
+              <a href="#" class="d-flex">
+                <i class="fas fa-clock fa-1x text-dark mb-0"></i>
+                <h5 style="font-size: 15px" class="text-white font-italic mb-0">
+                  Asr
+                </h5>
+              </a>
+              <h5 style="font-size: 15px" class="text-white font-italic mt-0">
+                @Model.GetPrayerTime.Asr
+              </h5>
+            </div>
+            <div class="fajr mx-1">
+              <a href="#" class="d-flex">
+                <i class="fas fa-clock fa-1x text-dark mb-0"></i>
+                <h5 style="font-size: 15px" class="text-white font-italic mb-0">
+                  Maghrib
+                </h5>
+              </a>
+              <h5 style="font-size: 15px" class="text-white font-italic mt-0">
+               @Model.GetPrayerTime.Maghrib
+              </h5>
+            </div>
+            <div class="fajr mx-2">
+              <a href="#" class="d-flex">
+                <i class="fas fa-clock fa-1x text-dark mb-0"></i>
+                <h5 style="font-size: 15px" class="text-white font-italic mb-0">
+                  Ishaa
+                </h5>
+              </a>
+              <h5 style="font-size: 15px" class="text-white font-italic mt-0">
+                @Model.GetPrayerTime.Isha
+              </h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+        <div class="prof-container text-center">
+          <div class="prof">
+            <img
+              src="~/img/sheikh.jfif"
+              alt=""
+              class="img-thumbnail rounded-circle d-md-block"
+            />
+          </div>
+          <a class="" asp-area="" asp-controller="Profile" asp-action="Create"><h7 class="imam-nav-name" ><u>Imam  @Model.GetProfile.LastName</u></h7></a>
+       
+        </div>
+      </nav>
+    </header>
+ 
  <!-- Menu Beginning -->
     <section class="d-flex justify-content-between ">
       <div class="menu col-lg-3 p-0" style="max-height: 80vh">
@@ -50,81 +161,59 @@
 
       <!-- Feed beginning -->
       <div class="feed col-lg-5 shadow p-0 mb-5 bg-body rounded">
-
-
-
-       
-         
-             
-      
-     
+    
           <div class=" p-0">
               <div id="example" class="carousel carousel-dark slide" data-ride="carousel">
                   <ul class="carousel-indicators ">
                       <li data-target="#example" data-slide-to='0' class="active bg-dark"></li>
-                      <li data-target="#example" data-slide-to='1' class=" bg-dark"></li>
-                      <li data-target="#example" data-slide-to='2' class=" bg-dark"></li>
+                      @for (var i = 1; i < @Model.GetFeeds.Count; i++)
+                      {
+                          <li data-target="#example" data-slide-to='@i' class=" bg-dark"></li>
                      
+                      }                    
                   </ul>
       
                   <!-- images -->
                   <div class="carousel-inner p-0 ">
-                      <div class="carousel-item active">
+                          <div class="carousel-item active ">
                         <div class="card " style="min-height: 80vh">
                           <div
                             class="card-header font-italic text-capitalize"
-                            style="background-color: gold"
+                            style="background-color: @Model.GetFeeds[0].FeedColor"
                           >
-                            <strong><h3>Fund Raisng</h3></strong>
+                            <strong><h3>@Model.GetFeeds[0].FeedTitle</h3></strong>
                           </div>
                           <div class="card-body bg-light">
-                            <h5 class="card-title">Sunday School Lunch</h5>
+                            <h5 class="card-title">Sunday </h5>
                             <p class="card-text announcement" style="font-weight: 100;">
-                              Dear brothers and sisters, as you all know the new school year is
-                              starting in about a month, and we need funds to support the
-                              kitchen for the kid's lunch.W can't make this possible without
-                              you,we are commited this year to provide Hala and organic foods
-                              for the kids, and this come at a cost .Please be generous in your
-                              donations
+                           @Model.GetFeeds[0].FeedDesc
                             </p>
-                            <footer class="blockquote-footer text-right">Board of Directors</footer>
+                            <footer class="blockquote-footer text-right">@Model.GetFeeds[0].FeedNarrator</footer>
                           </div>
                         </div>
                       </div>
-                      <div class="carousel-item  ">
+                      @for (var i = 1; i < @Model.GetFeeds.Count; i++)
+                    { 
+                                            
+              <div class="carousel-item ">
                         <div class="card " style="min-height: 80vh">
                           <div
                             class="card-header font-italic text-capitalize"
-                            style="background-color: cyan"
+                            style="background-color: @Model.GetFeeds[i].FeedColor"
                           >
-                            <strong><h3>General Announcement</h3></strong>
+                            <strong><h3>@Model.GetFeeds[0].FeedTitle</h3></strong>
                           </div>
                           <div class="card-body bg-light">
-                            <h5 class="card-title text-capitalize">Prayer Time change</h5>
-                            <p class="card-text announcement">
-                              From November 14th,2023 we will be praying the prayer of Fajr at 5:30AM and the prayer of Ishaa at 6:30PM. Please be on time for the prayer. May Allah reward you for your efforts.
+                            <h5 class="card-title">Sunday </h5>
+                            <p class="card-text announcement" style="font-weight: 100;">
+                           @Model.GetFeeds[i].FeedDesc
                             </p>
-                            <footer class="blockquote-footer text-right">Imam Khalilou</footer>
+                            <footer class="blockquote-footer text-right">@Model.GetFeeds[i].FeedNarrator</footer>
                           </div>
                         </div>
                       </div>
-                      <div class="carousel-item">
-                        <div class="card " style="min-height: 80vh">
-                          <div
-                            class="card-header font-italic text-capitalize"
-                            style="background-color: red"
-                          >
-                            <strong><h3>Funeral</h3></strong>
-                          </div>
-                          <div class="card-body bg-light">
-                            <h5 class="card-title text-capitalize">To God we belong and to him we shall return</h5>
-                            <p class="card-text announcement">
-                              Dear brothers and sisters, it's with great sadness that we inform you of the passing of our beloved brother, Mr. John Doe. May Allah grant him Jannah and may Allah grant his family the strength to bear this loss. May Allah reward you for your efforts.
-                            </p>
-                            <footer class="blockquote-footer text-right">Imam Khalilou</footer>
-                          </div>
-                        </div>
-                      </div>
+                      }
+                 
                      
                   </div>
          <!-- end of images -->
@@ -182,3 +271,30 @@
 
       <!-- Hadith End -->
     </section>
+
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2023 - Masjid - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+ <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+    <script src="~/js/jquery-3.6.3.min.js"></script>
+    <script src="~js/bootstrap.bundle.min.js"></script>
+   
+</body>
+</html>

@@ -3,6 +3,7 @@ using Masjid.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Masjid.Migrations
 {
     [DbContext(typeof(MasjidDbContext))]
-    partial class MasjidDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230225182425_Db testing validation")]
+    partial class Dbtestingvalidation
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -140,47 +143,6 @@ namespace Masjid.Migrations
                     b.HasKey("HadithId");
 
                     b.ToTable("Hadiths");
-                });
-
-            modelBuilder.Entity("Masjid.Models.Imam", b =>
-                {
-                    b.Property<int>("ImamId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ImamId"));
-
-                    b.Property<string>("Imam_First_Name")
-                        .IsRequired()
-                        .HasMaxLength(30)
-                        .HasColumnType("nvarchar(30)");
-
-                    b.Property<string>("Imam_Last_Name")
-                        .IsRequired()
-                        .HasMaxLength(30)
-                        .HasColumnType("nvarchar(30)");
-
-                    b.HasKey("ImamId");
-
-                    b.ToTable("Imams");
-                });
-
-            modelBuilder.Entity("Masjid.Models.Institution", b =>
-                {
-                    b.Property<int>("InstitutionId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("InstitutionId"));
-
-                    b.Property<string>("InstitutionName")
-                        .IsRequired()
-                        .HasMaxLength(30)
-                        .HasColumnType("nvarchar(30)");
-
-                    b.HasKey("InstitutionId");
-
-                    b.ToTable("Intitutions");
                 });
 
             modelBuilder.Entity("Masjid.Models.IslamicClasse", b =>

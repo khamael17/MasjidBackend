@@ -138,7 +138,7 @@
                             <div class="col-lg-3"></div>
                             <div class="col-lg-6 px-0">
 
-                                <form asp-action="Create" method="post" class=" px-3">
+                                <form asp-action="Createprof" method="post" class=" px-3">
                                     <div class="mb-3 text-center">
                                         <label asp-for="InstitutionName" class="form-label text-capitalize " >Institution Name</label>                                      
                                          <input asp-for="InstitutionName" class="form-control" value=""/>
@@ -163,17 +163,17 @@
                                     <div class="py-4 ">
                                         <h5><u>Name</u></h5>
                                     </div>
-                                     <form asp-action="Create" method="post" class=" px-3">
+                                     <form asp-action="CreateName" method="post" class=" px-3">
                                         <div class="mb-3 ">
                                             <label asp-for="FirstName" class="form-label text-capitalize " >First Name</label>                                      
                                                     <input asp-for="FirstName" class="form-control" value=""/>
-                                                    <span asp-validation-for="FirstName" class="text-danger"/>
+                                                    <span asp-validation-for="FirstName" class="text-danger"></span>
                                            
                                         </div>
                                         <div class="mb-3">
                                             <label asp-for="LastName" class="form-label text-capitalize " >Last Name</label>                                      
                                                     <input asp-for="LastName" class="form-control" value=""/>
-                                                    <span asp-validation-for="LastName" class="text-danger"/>
+                                                    <span asp-validation-for="LastName" class="text-danger"></span>
                                         </div>
 
                                         <button type="submit" class="btn btn-primary" style=" font-size: 10px;">Update
@@ -191,16 +191,16 @@
                                     <div class="py-4 ">
                                         <h5><u>Password</u></h5>
                                     </div>
-                                    <form asp-action="Create" method="post" class=" px-3">
+                                    <form asp-action="CreatePassword" method="post" class=" px-3">
                                         <div class="mb-3 ">
                                            <label asp-for="OldPassword" class="form-label text-capitalize " >Old Password</label>                                      
                                                     <input asp-for="OldPassword" class="form-control" value=""/>
-                                                    <span asp-validation-for="OldPassword" class="text-danger"/>
+                                                    <span asp-validation-for="OldPassword" class="text-danger"></span>
                                         </div>
                                         <div class="">
                                             <label asp-for="NewPassword" class="form-label text-capitalize " >New Password</label>                                      
                                                     <input asp-for="NewPassword" class="form-control" value=""/>
-                                                    <span asp-validation-for="NewPassword" class="text-danger"/>
+                                                    <span asp-validation-for="NewPassword" class="text-danger"></span>
                                         </div>
                                         <div id="passwordHelpBlock" class="form-text mb-3 " style=" font-size:smaller">
                                             Your password must be 8-20 characters long, contain letters and numbers, and
@@ -209,7 +209,7 @@
                                         <div class="mb-3">
                                            <label asp-for="ConfirmPassword" class="form-label text-capitalize " >Confirm Password</label>                                      
                                                     <input asp-for="ConfirmPassword" class="form-control" value=""/>
-                                                    <span asp-validation-for="ConfirmPassword" class="text-danger"/>
+                                                    <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
                                         </div>
 
                                         <button type="submit" class="btn btn-primary" style=" font-size: 10px;">Update
@@ -229,22 +229,22 @@
 
                                     <div class="py-4 ">
                                         <h5><u>Prayer Times</u></h5>
-                                         <form asp-action="Create" method="post" class=" px-3">
+                                         <form asp-action="CreatePrayers" method="post" class=" px-3">
                                             <div class="d-lg-inline-flex  ">
                                                 <div class="mx-1 text-center itc">
                                                  <label asp-for="Fajr" class="form-label text-capitalize " >Fajr</label>                                      
                                                     <input asp-for="Fajr" class="form-control" value=""/>
-                                                    <span asp-validation-for="Fajr" class="text-danger"/>
+                                                    <span asp-validation-for="Fajr" class="text-danger"></span>
                                                 </div>
                                                 <div class="mx-1 text-center itc">
                                                   <label asp-for="Dhur" class="form-label text-capitalize " >Dhur</label>                                      
                                                     <input asp-for="Dhur" class="form-control" value=""/>
-                                                    <span asp-validation-for="Dhur" class="text-danger"/>
+                                                    <span asp-validation-for="Dhur" class="text-danger"></span>
                                                 </div>
                                                 <div class="mx-1 text-center itc">
                                                   <label asp-for="Asr" class="form-label text-capitalize " >Asr</label>                                      
                                                     <input asp-for="Asr" class="form-control" value=""/>
-                                                    <span asp-validation-for="Asr" class="text-danger"/>
+                                                    <span asp-validation-for="Asr" class="text-danger"></span>
                                                 </div>
 
                                             </div>
@@ -252,17 +252,17 @@
                                                 <div class="mx-1 text-center itc">
                                                    <label asp-for="Maghrib" class="form-label text-capitalize " >Maghrib</label>                                      
                                                     <input asp-for="Maghrib" class="form-control" value=""/>
-                                                    <span asp-validation-for="Maghrib" class="text-danger"/>
+                                                    <span asp-validation-for="Maghrib" class="text-danger"></span>
                                                 </div>
                                                 <div class="mx-1 text-center itc">
                                                     <label asp-for="Isha" class="form-label text-capitalize " >Ishaa</label>                                      
                                                     <input asp-for="Isha" class="form-control" value=""/>
-                                                    <span asp-validation-for="Isha" class="text-danger"/>
+                                                    <span asp-validation-for="Isha" class="text-danger"></span>
                                                 </div>
                                                 <div class="mx-1 text-center itc">
                                                     <label asp-for="Jummah" class="form-label text-capitalize " >Jummah</label>                                      
                                                     <input asp-for="Jummah" class="form-control" value=""/>
-                                                    <span asp-validation-for="Jummah" class="text-danger"/>
+                                                    <span asp-validation-for="Jummah" class="text-danger"></span>
                                                 </div>
                                             </div>
                                             <button type="submit" class="btn btn-primary"
@@ -289,16 +289,16 @@
                                 <div class="py-4 ">
                                     <h5><u>Feed</u></h5>
                                 </div>
-                                <form asp-action="Create" method="post" class=" px-3">
+                                <form asp-action="CreateFeed" method="post" class=" px-3">
                                     <div class="mb-3 ">
                                         <label asp-for="FeedDesc" class="form-label text-capitalize " >Feed</label>                                      
                                         <input asp-for="FeedDesc" class="form-control" value=""/>
-                                        <span asp-validation-for="FeedDesc" class="text-danger"/>
+                                        <span asp-validation-for="FeedDesc" class="text-danger"></span>
                                     </div>
                                     <div class="mb-3 ">
                                        <label asp-for="FeedNarrator" class="form-label text-capitalize " >Narrator</label>                                      
                                         <input asp-for="FeedNarrator" class="form-control" value=""/>
-                                        <span asp-validation-for="FeedNarrator" class="text-danger"/>
+                                        <span asp-validation-for="FeedNarrator" class="text-danger"></span>
                                     </div>
                                     <fieldset id="kk" tag="kk" class="row mb-3">
 
@@ -356,7 +356,7 @@
                                 <div class="py-4 ">
                                     <h5><u>Events</u></h5>
                                 </div>
-                                <form asp-action="Index" method="post" class=" px-3">
+                                <form asp-action="Create" method="post" class=" px-3">
                                     <div class="mb-3 ">
                                          <label asp-for="EventTitle" class="form-label text-capitalize " >Event Title</label>                                      
                                         <input asp-for="EventTitle" class="form-control" value=""/>
@@ -401,26 +401,26 @@
                                 <div class="py-4 ">
                                     <h5><u>Islamic Classes</u></h5>
                                 </div>
-                                 <form asp-action="Index" method="post" class=" px-3">
+                                 <form asp-action="CreateClass" method="post" class=" px-3">
                                     <div class="mb-3 ">
                                          <label asp-for="ClassTitle" class="form-label text-capitalize " >Class Title</label>                                      
                                         <input asp-for="ClassTitle" class="form-control" value=""/>
-                                        <span asp-validation-for="ClassTitle" class="text-danger"/>
+                                        <span asp-validation-for="ClassTitle" class="text-danger"></span>
                                     </div>
                                     <div class="mb-3 ">
                                         <label asp-for="IslamicClassGuest" class="form-label text-capitalize " >Guest</label>                                      
                                         <input asp-for="IslamicClassGuest" class="form-control" value=""/>
-                                        <span asp-validation-for="IslamicClassGuest" class="text-danger"/>
+                                        <span asp-validation-for="IslamicClassGuest" class="text-danger"></span>
                                     </div>
                                     <div class="mb-3 ">
                                          <label asp-for="IslamicClassTime_Place" class="form-label text-capitalize " >Time & Place</label>                                      
                                         <input asp-for="IslamicClassTime_Place" class="form-control" value=""/>
-                                        <span asp-validation-for="IslamicClassTime_Place" class="text-danger"/>
+                                        <span asp-validation-for="IslamicClassTime_Place" class="text-danger"></span>
                                     </div>
                                     <div class="mb-3 ">
                                         <label asp-for="ClassDescription" class="form-label text-capitalize " >The Class</label>                                      
                                         <input asp-for="ClassDescription" class="form-control" value=""/>
-                                        <span asp-validation-for="ClassDescription" class="text-danger"/>
+                                        <span asp-validation-for="ClassDescription" class="text-danger"></span>
                                     </div>
 
                                     <button type="submit" class="btn btn-primary mb-4"style=" font-size: 10px;">Post</button>
@@ -447,31 +447,31 @@
                                 <div class="py-4 ">
                                     <h5><u>Youth Program</u></h5>
                                 </div>
-                                 <form asp-action="Index" method="post" class=" px-3">
+                                 <form asp-action="CreateYprogram" method="post" class=" px-3">
                                     <div class="mb-3 ">
                                          <label asp-for="YouthProgramTitle" class="form-label text-capitalize " >Program Title</label>                                      
                                         <input asp-for="YouthProgramTitle" class="form-control" value=""/>
-                                        <span asp-validation-for="YouthProgramTitle" class="text-danger"/>
+                                        <span asp-validation-for="YouthProgramTitle" class="text-danger"></span>
                                     </div>
                                     <div class="mb-3 ">
                                           <label asp-for="YouthProgramGuest" class="form-label text-capitalize " >Guest</label>                                      
                                         <input asp-for="YouthProgramGuest" class="form-control" value=""/>
-                                        <span asp-validation-for="YouthProgramGuest" class="text-danger"/>
+                                        <span asp-validation-for="YouthProgramGuest" class="text-danger"></span>
                                     </div>
                                     <div class="mb-3 ">
                                         <label asp-for="YouthProgramTimePlace" class="form-label text-capitalize " >Time & Place</label>                                      
                                         <input asp-for="YouthProgramTimePlace" class="form-control" value=""/>
-                                        <span asp-validation-for="YouthProgramTimePlace" class="text-danger"/>
+                                        <span asp-validation-for="YouthProgramTimePlace" class="text-danger"></span>
                                     </div>
                                     <div class="mb-3 d-flex ">
                                         <label asp-for="YouthProgramPrice" class="form-label text-capitalize " >Price</label>                                      
                                         <input asp-for="YouthProgramPrice" class="form-control" value=""/>
-                                        <span asp-validation-for="YouthProgramPrice" class="text-danger"/>
+                                        <span asp-validation-for="YouthProgramPrice" class="text-danger"></span>
                                     </div>
                                     <div class="mb-3 ">
                                        <label asp-for="YouthProgramDesc" class="form-label text-capitalize " >The Program</label>                                      
                                         <input asp-for="YouthProgramDesc" class="form-control" value=""/>
-                                        <span asp-validation-for="YouthProgramDesc" class="text-danger"/>
+                                        <span asp-validation-for="YouthProgramDesc" class="text-danger"></span>
                                     </div>
 
                                     <button type="submit" class="btn btn-primary mb-4" style=" font-size: 10px;">Post</button>
@@ -500,27 +500,27 @@
                                 <div class="py-4 ">
                                     <h5><u>After School and Day Care Program</u></h5>
                                 </div>
-                               <form asp-action="Create" method="post" class=" px-3">
+                               <form asp-action="CreateAftSchl" method="post" class=" px-3">
                                     <div class="mb-3 ">
                                         <label asp-for="AftSchoolProgramTitle" class="form-label text-capitalize " >Program Title</label>                                      
                                         <input asp-for="AftSchoolProgramTitle" class="form-control" value=""/>
-                                        <span asp-validation-for="AftSchoolProgramTitle" class="text-danger"/>
+                                        <span asp-validation-for="AftSchoolProgramTitle" class="text-danger"></span>
                                     </div>
 
                                     <div class="mb-3 ">
                                           <label asp-for="AftSchoolProgramTimePlace" class="form-label text-capitalize " >Time & Place</label>                                      
                                         <input asp-for="AftSchoolProgramTimePlace" class="form-control" value=""/>
-                                        <span asp-validation-for="AftSchoolProgramTimePlace" class="text-danger"/>
+                                        <span asp-validation-for="AftSchoolProgramTimePlace" class="text-danger"></span>
                                     </div>
                                     <div class="mb-3 d-flex ">
                                        <label asp-for="AftSchoolProgramPrice" class="form-label text-capitalize " >Price</label>                                      
                                         <input asp-for="AftSchoolProgramPrice" class="form-control" value=""/>
-                                        <span asp-validation-for="AftSchoolProgramPrice" class="text-danger"/>
+                                        <span asp-validation-for="AftSchoolProgramPrice" class="text-danger"></span>
                                     </div>
                                     <div class="mb-3 ">
                                         <label asp-for="AftSchoolProgramDesc" class="form-label text-capitalize " >The Program</label>                                      
                                         <input asp-for="AftSchoolProgramDesc" class="form-control" value=""/>
-                                        <span asp-validation-for="AftSchoolProgramDesc" class="text-danger"/>
+                                        <span asp-validation-for="AftSchoolProgramDesc" class="text-danger"></span>
                                     </div>
 
                                     <button type="submit" class="btn btn-primary mb-4" style=" font-size: 10px;">Post</button>
