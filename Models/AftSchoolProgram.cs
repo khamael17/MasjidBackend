@@ -12,9 +12,17 @@ namespace Masjid.Models
         [StringLength(300)]
         public string? AftSchoolProgramDesc { get; set; }=String.Empty!;
 
-        [Required(ErrorMessage = "This field cannot be empty/cannot be over 50 characters")]
-        [StringLength(50)]
-        public  string? AftSchoolProgramTimePlace { get; set; } = String.Empty!;
+        [Required(ErrorMessage = "This field cannot be empty/cannot be over 20 characters")]
+        [StringLength(20)]
+        public  string? AftSchoolProgramTime { get; set; } = String.Empty!;
+
+
+
+        [Required(ErrorMessage = "This field cannot be empty/cannot be over 100 characters")]
+        [StringLength(100)]
+        public string? AftSchoolProgramPlace { get; set; } = String.Empty!;
+
+
 
         [Required(ErrorMessage = "This field cannot be empty/cannot be over 20 characters")]
         [StringLength(20)]

@@ -3,6 +3,7 @@ using Masjid.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Masjid.Migrations
 {
     [DbContext(typeof(MasjidDbContext))]
-    partial class MasjidDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230227222031_Fixingg lenght problem for feed 2nd try")]
+    partial class Fixingglenghtproblemforfeed2ndtry
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

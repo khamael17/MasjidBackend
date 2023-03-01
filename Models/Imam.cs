@@ -17,5 +17,9 @@ namespace Masjid.Models
         [Required(ErrorMessage = "This value cannot be empty/or over 30 characters")]
         [StringLength(30)]
         public string Imam_Last_Name { get; set; } = String.Empty;
+
+        [Required(ErrorMessage = "This value cannot be empty/or over 50 characters")]
+        [StringLength(50)]
+        public string Imam_Email { get; set; } = String.Empty;
     }
 }

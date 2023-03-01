@@ -28,6 +28,52 @@ namespace Masjid.Controllers
             return View();
         }
 
+
+        // GET: ProfileController/Details/5
+        public ActionResult Details(int id)
+        {
+            return View();
+        }
+
+        // GET: ProfileController/Create
+
+     
+        public ActionResult Feed()
+        {
+
+                return View(_home.GetFeeds);
+
+        }
+
+
+
+        public ActionResult Events()
+        {
+
+            return View(_home.GetEvents);
+
+        }
+
+        public ActionResult IslamicClass()
+        {
+          
+                return View(_home.GetIslamicClassess);
+        }
+
+      
+        public ActionResult Youthprogram()
+        {
+            return View(_home.GetYouthProgram);
+        }
+
+
+        public ActionResult AfterSchoolProgram()
+        {
+            return View(_home.GetAftSchoolPrograms);
+        }
+
+
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {

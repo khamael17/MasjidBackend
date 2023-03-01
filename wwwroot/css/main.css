@@ -3,64 +3,85 @@
 @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
 
-@import url('https://fonts.googleapis.com/css2?family=Alegreya&family=Great+Vibes&family=Hanken+Grotesk&family=Prata&family=Sora:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alegreya&family=Great+Vibes&family=Hanken+Grotesk&family=Prata&family=Sora:wght@300&display=swap'); /* Fais gaff a sora 500 */
 
+@import url('https://fonts.googleapis.com/css2?family=Alegreya&family=Great+Vibes&family=Hanken+Grotesk&family=Parisienne&family=Prata&family=Sora:wght@300&display=swap');
+
+<style >
+@import url('https://fonts.googleapis.com/css2?family=Alegreya&family=Great+Vibes&family=Hanken+Grotesk&family=Marhey:wght@300&family=Parisienne&family=Prata&family=Sora:wght@300&display=swap');
+</style >
 
 .prof img {
-  width: 100%;
-  height: auto;
-  border-radius: 50%;
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
 }
+
 .prof {
-  max-width: 75px;
+    max-width: 75px;
 }
 
 .menu {
-  /* border: 1px solid red; */
+    /* border: 1px solid red; */
 }
+
 .feed {
-  /* border: 1px solid blue; */
+    /* border: 1px solid blue; */
 }
 
 .hadith {
-  /* border: 1px solid green; */
- 
+    /* border: 1px solid green; */
 }
+
 .bg-color {
-  background-color: aliceblue;
+    background-color: aliceblue;
 }
 
-.glow{
-  @keyframes spark {
-    50% {background-color:  10px 20px 30px black;}
-}
-}
-
-.salam{
-  
-font-family: 'Great Vibes', cursive;
-  font-size: 15px;
-  font-weight: 400;
-
+.glow {
+    @keyframes spark {
+        50% {
+            background-color: 10px 20px 30px black;
+        }
+    }
 }
 
-.masjid-name{
-  
-
-  font-family: 'Hanken Grotesk', sans-serif;
-  font-size: 40px;
+.salam {
+    font-family: 'Great Vibes', cursive;
+    font-size: 15px;
+    font-weight: 400;
 }
 
-.announcement{
-  font-family: 'Sora', sans-serif;
-  font-weight: 100;
+.masjid-name {
+    font-family: 'Hanken Grotesk', sans-serif;
+    font-size: 40px;
+}
+
+.announcement {
+    font-family: 'Sora', sans-serif;
+    font-weight: 100;
 }
 
 
-.imam-nav-name{
-  font-family: 'Prata', sans-serif;
-  font-weight: 100;
-  font-size: 10px;
-  
+.imam-nav-name {
+    font-family: 'Prata', sans-serif;
+    font-weight: 100;
+    font-size: 10px;
 }
 
+.islamicClass {
+    font-family: 'Parisienne', cursive;
+    font-weight: 700;
+}
+
+.c0149 {
+    width: 100%;
+    padding: 0;
+    overflow-y: hidden !important;
+    overflow-x: auto;
+    top: 0px;
+    position: relative;
+}
+
+.youth-card {
+    font-family: 'marhey', sans-serif;
+}

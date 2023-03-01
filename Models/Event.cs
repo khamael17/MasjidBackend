@@ -29,7 +29,14 @@ namespace Masjid.Models
 
         [Required(ErrorMessage = "This field cannot be empty/cannot be over 20 characters")]
         [StringLength(20)]
-        public string? AftSchoolProgramPrice { get; set; } = String.Empty!;
+        public string? EventPrice { get; set; } = String.Empty!;
+
+
+        [Required(ErrorMessage = "This field cannot be empty/cannot be over 50 characters")]
+        [StringLength(50)]
+        public string? EventTime_Place { get; set; } = String.Empty!;
+
+
 
 
         public string? EventImageUrl { get; set; } = String.Empty;
