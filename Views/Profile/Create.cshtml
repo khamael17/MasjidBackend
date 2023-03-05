@@ -577,6 +577,51 @@
     <script type="text/javascript">
         $(document).ready(function(){
 
+
+
+
+
+
+
+            //Event beginning
+            $("#btnYprogram").click(function () {
+
+                event.preventDefault();
+
+                const datat = {
+                    YouthProgramTitle: $("#YouthProgramTitle").val(),
+                    YouthProgramGuest: $("#YouthProgramGuest").val(),
+                    YouthProgramPrice: $("#YouthProgramPrice").val(),
+                    YouthProgramPlace: $("#YouthProgramPlace").val(),
+                    YouthProgramTime: $("#YouthProgramTime").val(),
+                    YouthProgramDesc: $("#YouthProgramDesc").val()
+                };
+
+                $.ajax(
+                    {
+                        type: "POST",
+                        url: "/api/YouthProgram",
+                        data: JSON.stringify(datat),
+                        contentType: "application/json; charset=utf-8",
+                        dataType: "json",
+                        success: function () {
+                            alert('bon');
+                            console.log();
+                        },
+                        error: function (xhr, status, error) {
+                            console.log(xhr, error);
+                            console.log("say some");
+                            alert("pas bon");
+                        }
+                    });
+            });
+
+
+
+
+            //Event end
+
+
            //Youth Program End
         $("#btnYprogram").click(function()
            {
