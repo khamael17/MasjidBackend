@@ -1,0 +1,54 @@
+﻿@model Masjid.Services.HomeService
+
+<!DOCTYPE html>
+<html lang="en">
+
+
+@{
+    Layout = "_Layout";
+}
+@{
+    var ListOfProg = Model.GetYouthProgram;
+}
+
+<div
+
+     @foreach(var prog in ListOfProg ){
+      <form class="mb-2">
+            <div class="card bg-light">
+                        <img src="/img/Youth-Ministry.jpg" class="card-img-top" alt="Card image cap">
+                <div class="card-body ">
+                    <h5 class="card-title">@prog.YouthProgramTitle</h5>
+                    <p class="card-text">
+                    @prog.YouthProgramDesc
+                    </p>
+                </div>
+                <ul class="list-group list-group-flush bg-light">
+                    <li class="list-group-item bg-light">
+                        <h6 class="youth-card">Guest: <u>@prog.YouthProgramGuest</u></h6>
+                    </li>
+                    <li class="list-group-item bg-light">
+                        <h6 class="youth-card">Price: <span class="  imam-nav-name ">@prog.YouthProgramPrice</span></h6>
+                    </li>
+
+                    <li class="list-group-item bg-light">
+                        <h6 class="youth-card">
+                            Time: <span class="  imam-nav-name ">
+                            @prog.YouthProgramTime
+                            </span>
+                        </h6>
+                    </li>
+                    <li class="list-group-item bg-light">
+                        <h6 class="youth-card">Place: <span class="  imam-nav-name "> @prog.YouthProgramPlace</span></h6>
+                    </li>
+                </ul>
+                <div class="card-body">
+                    <a href="#" class="card-link btn btn-warning">Register</a>
+                    <a href="#" class="card-link btn btn-danger">Delete</a>
+                </div>
+            </div>
+        </form>
+
+        }
+</div>
+</html>

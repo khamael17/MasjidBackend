@@ -1,0 +1,651 @@
+﻿@model Masjid.ViewModels.ProfileViewModel
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    @{
+        Layout = "";
+    }
+    
+    
+    
+    <title>Profile</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <!-- Bootstrap CSS -->
+   @* <link rel="stylesheet" href="~/css/main.css" />*@
+    <link rel="stylesheet" href="~/css/profile.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+        integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+        integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+
+    <script defer src="./js/brands.js"></script>
+    <script defer src="./js/solid.js"></script>
+    <script defer src="./js/fontawesome.js"></script>
+</head>
+
+<body>
+
+
+
+    <div class="profile-menu d-flex ">
+
+
+
+        
+        <div class=" col-lg-3  mx-0 c0149 " style="" >
+            <div class="menu  p-0" style="max-height: 80vh">
+                <div class="card bg-color" style="max-height: 80vh">
+                  <div
+                    class="card-header bg-primary text-white text-uppercase text-center py-3"
+                  >
+                    <h5>Settings</h5>
+                  </div>
+        
+                  <ul class="list-group list-group-flush text-center">
+                    <li class="list-group-item" style="background-color: aliceblue">
+                        <a href="#profile" class="btn font-italic"><u>Profile</u></a>
+                      </li>
+                      <li class="list-group-item" style="background-color: aliceblue">
+                        <a href="#prayer-time" class="btn font-italic"><u>Prayer Time</u></a>
+                      </li>
+                      <li class="list-group-item" style="background-color: aliceblue">
+                        <a href="#feed" class="btn font-italic"><u>Feed</u></a>
+                      </li>
+                      <li class="list-group-item" style="background-color: aliceblue">
+                        <a href="#events" class="btn font-italic"><u>Events</u></a>
+                      </li>
+                    <li class="list-group-item" style="background-color: aliceblue">
+                      <a href="#Yprogram" class="btn font-italic"><u>Youth Program</u></a>
+                    </li>
+                    <li class="list-group-item" style="background-color: aliceblue">
+                      <a href="#Isclass" class="btn font-italic"><u>Islamic Classes</u></a>
+                    </li>
+                    
+                   
+                    <li class="list-group-item" style="background-color: aliceblue">
+                        <a href="#A-Sprogram" class="btn font-italic">
+                          <u>After-School Program</u></a
+                        >
+                      </li>
+                    
+                  </ul>
+                  <!-- <div class="card-footer p-0">
+                    <div class="row">
+                      <div class="col-lg-6">
+                        <a href="#" class="btn font-italic p-0 text-primary"
+                          style="font-size: 10px; "
+                          ><u>Logout <i class="fa fa-sign-out-alt fa-1x"></i></u></a
+                        >
+                      </div>
+                      <div class="col-lg-6">
+                        <a href="#" class="btn font-italic p-0 text-primary"
+                          style="font-size: 10px; "
+                          ><u>Settings <i class="fa fa-cog fa-1x"></i></u></a
+                        >
+                      </div>
+                    </div>
+                  </div> -->
+                </div>
+              </div>
+        </div>
+    
+
+        <!-- Profile beginning -->
+        <div class="col-lg-8 mx-0 px-0">
+            <section id="profile" class="container px-0" style=" font-size: 15px;">
+
+                <div class="card ">
+                    <div class="card-body bg-color">
+                        <div class="row ">
+                            <div class="col d-flex justify-content-center">
+                                <div class="prof-container">
+                                    <div class="prof text-center">
+                                        <img src="~/img/sheikh.jfif" alt="" class="img-thumbnail rounded-circle d-md-block" />
+                                        <h7 class="imam-nav-name">Imam Khalilou</h7>
+
+                                        <div>
+                                            <a href="#" class="btn font-italic p-0 text-primary"
+                                                style="font-size: 10px; ">
+                                                <u>change picture <i class="fa fa-upload fa-1x"></i></u>
+
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <!-- Institution Name -->
+                        <div class="row mx-4">
+                            <div class="col-lg-3"></div>
+                            <div class="col-lg-6 px-0">
+
+                                <form asp-action="Createprof" method="post" class=" px-3">
+                                    <div class="mb-3 text-center">
+                                        <label asp-for="InstitutionName" class="form-label text-capitalize " >Institution Name</label>                                      
+                                         <input asp-for="InstitutionName" class="form-control" value=""/>
+                                         <span asp-validation-for="InstitutionName" class="text-danger"></span>
+                                        <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
+                                    </div>
+
+
+                                    <button type="submit" class="btn btn-primary"
+                                        style=" font-size: 10px;">Update</button>
+                                </form>
+                            </div>
+                            <div class="col-lg-3"></div>
+
+
+
+                            <!-- Institution Name -->
+                            <!-- Update Name Beginning -->
+                            <div class="row mx-4">
+                                <div class="col-lg-3"></div>
+                                <div class="col-lg-6 px-0">
+                                    <div class="py-4 ">
+                                        <h5><u>Name</u></h5>
+                                    </div>
+                                     <form asp-action="CreateName" method="post" class=" px-3">
+                                        <div class="mb-3 ">
+                                            <label asp-for="FirstName" class="form-label text-capitalize " >First Name</label>                                      
+                                                    <input asp-for="FirstName" class="form-control" value=""/>
+                                                    <span asp-validation-for="FirstName" class="text-danger"></span>
+                                           
+                                        </div>
+                                        <div class="mb-3">
+                                            <label asp-for="LastName" class="form-label text-capitalize " >Last Name</label>                                      
+                                                    <input asp-for="LastName" class="form-control" value=""/>
+                                                    <span asp-validation-for="LastName" class="text-danger"></span>
+                                        </div>
+
+                                        <button type="submit" class="btn btn-primary" style=" font-size: 10px;">Update
+                                            Name</button>
+                                    </form>
+                                </div>
+                                <div class="col-lg-3"></div>
+                            </div>
+                            <!-- Update Name Ending -->
+
+                            <!-- Update Password Beginning -->
+                            <div class="row mx-4">
+                                <div class="col-lg-3  "></div>
+                                <div class="col-lg-6 col-md-12 col-sm-12 px-0">
+                                    <div class="py-4 ">
+                                        <h5><u>Password</u></h5>
+                                    </div>
+                                    <form asp-action="CreatePassword" method="post" class=" px-3">
+                                        <div class="mb-3 ">
+                                           <label asp-for="OldPassword" class="form-label text-capitalize " >Old Password</label>                                      
+                                                    <input asp-for="OldPassword" class="form-control" value=""/>
+                                                    <span asp-validation-for="OldPassword" class="text-danger"></span>
+                                        </div>
+                                        <div class="">
+                                            <label asp-for="NewPassword" class="form-label text-capitalize " >New Password</label>                                      
+                                                    <input asp-for="NewPassword" class="form-control" value=""/>
+                                                    <span asp-validation-for="NewPassword" class="text-danger"></span>
+                                        </div>
+                                        <div id="passwordHelpBlock" class="form-text mb-3 " style=" font-size:smaller">
+                                            Your password must be 8-20 characters long, contain letters and numbers, and
+                                            must not contain spaces, special characters, or emoji.
+                                        </div>
+                                        <div class="mb-3">
+                                           <label asp-for="ConfirmPassword" class="form-label text-capitalize " >Confirm Password</label>                                      
+                                                    <input asp-for="ConfirmPassword" class="form-control" value=""/>
+                                                    <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+                                        </div>
+
+                                        <button type="submit" class="btn btn-primary" style=" font-size: 10px;">Update
+                                            Password</button>
+                                    </form>
+                                </div>
+                                <div class="col-lg-3"></div>
+
+                            </div>
+                            <!-- Update Password Ending -->
+
+
+                            <!-- Prayer Time Beginning -->
+                            <div id="prayer-time"class="row mx-4">
+                                <div class="col-lg-3"></div>
+                                <div class="col-lg-6 px-0">
+
+                                    <div class="py-4 ">
+                                        <h5><u>Prayer Times</u></h5>
+                                         <form asp-action="CreatePrayers" method="post" class=" px-3">
+                                            <div class="d-lg-inline-flex  ">
+                                                <div class="mx-1 text-center itc">
+                                                 <label asp-for="Fajr" class="form-label text-capitalize " >Fajr</label>                                      
+                                                    <input asp-for="Fajr" class="form-control" value=""/>
+                                                    <span asp-validation-for="Fajr" class="text-danger"></span>
+                                                </div>
+                                                <div class="mx-1 text-center itc">
+                                                  <label asp-for="Dhur" class="form-label text-capitalize " >Dhur</label>                                      
+                                                    <input asp-for="Dhur" class="form-control" value=""/>
+                                                    <span asp-validation-for="Dhur" class="text-danger"></span>
+                                                </div>
+                                                <div class="mx-1 text-center itc">
+                                                  <label asp-for="Asr" class="form-label text-capitalize " >Asr</label>                                      
+                                                    <input asp-for="Asr" class="form-control" value=""/>
+                                                    <span asp-validation-for="Asr" class="text-danger"></span>
+                                                </div>
+
+                                            </div>
+                                            <div class="d-flex mb-3">
+                                                <div class="mx-1 text-center itc">
+                                                   <label asp-for="Maghrib" class="form-label text-capitalize " >Maghrib</label>                                      
+                                                    <input asp-for="Maghrib" class="form-control" value=""/>
+                                                    <span asp-validation-for="Maghrib" class="text-danger"></span>
+                                                </div>
+                                                <div class="mx-1 text-center itc">
+                                                    <label asp-for="Isha" class="form-label text-capitalize " >Ishaa</label>                                      
+                                                    <input asp-for="Isha" class="form-control" value=""/>
+                                                    <span asp-validation-for="Isha" class="text-danger"></span>
+                                                </div>
+                                                <div class="mx-1 text-center itc">
+                                                    <label asp-for="Jummah" class="form-label text-capitalize " >Jummah</label>                                      
+                                                    <input asp-for="Jummah" class="form-control" value=""/>
+                                                    <span asp-validation-for="Jummah" class="text-danger"></span>
+                                                </div>
+                                            </div>
+                                            <button type="submit" class="btn btn-primary"
+                                                style=" font-size: 10px;">Update Prayer Times</button>
+                                        </form>
+
+                                    </div>
+                                    <div class="col-lg-3"></div>
+                                </div>
+                                <!-- Prayer Time End -->
+                            </div>
+                        </div>
+            </section>
+
+            <!-- Profile end -->
+
+            <!-- Feed beginning -->
+            <section id="feed" class="container px-0">
+                <div class="card">
+                    <div class="card-body bg-color">
+                        <div class="row">
+                            <div class="col-lg-3"></div>
+                            <div class="col-lg-6 col-md-12 col-sm-12">
+                                <div class="py-4 ">
+                                    <h5><u>Feed</u></h5>
+                                </div>
+                                <form asp-action="CreateFeed" method="post" class=" px-3">
+                                    <div class="mb-3 ">
+                                        <label asp-for="FeedDesc" class="form-label text-capitalize " >Feed</label>                                      
+                                        <input asp-for="FeedDesc" class="form-control" value=""/>
+                                        <span asp-validation-for="FeedDesc" class="text-danger"></span>
+                                    </div>
+                                    <div class="mb-3 ">
+                                       <label asp-for="FeedNarrator" class="form-label text-capitalize " >Narrator</label>                                      
+                                        <input asp-for="FeedNarrator" class="form-control" value=""/>
+                                        <span asp-validation-for="FeedNarrator" class="text-danger"></span>
+                                    </div>
+                                    <fieldset id="kk" tag="kk" class="row mb-3">
+
+                                        <div class="col-sm-10">
+                                            <div class="form-check">
+                                                <input asp-for="FeedType" class="form-check-input" type="radio" name="gridRadios"
+                                                    id="gridRadios1" value="blue" checked>
+                                                <label class="form-check-label" for="gridRadios1">
+                                                    General Announcement
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input asp-for="FeedType" class="form-check-input bg-warning" type="radio"
+                                                    name="gridRadios" id="gridRadios2" value="gold">
+                                                <label class="form-check-label" for="gridRadios2">
+                                                    Fund Raising
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input asp-for="FeedType" class="form-check-input bg-danger" type="radio" name="gridRadios"
+                                                    id="gridRadios2" value="red">
+                                                <label class="form-check-label" for="gridRadios2">
+                                                    Funeral
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input asp-for="FeedType" class="form-check-input bg-success" type="radio"
+                                                    name="gridRadios" id="gridRadios2" value="green">
+                                                <label class="form-check-label" for="gridRadios2">
+                                                    Request for Duaa
+                                                </label>
+                                            </div>
+
+                                        </div>
+                                    </fieldset>
+                                    <button type="submit" class="btn btn-primary mb-4"style=" font-size: 10px;">Post</button>
+                                </form>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Feed end -->
+
+            <!-- Event Beginning -->
+
+
+            <section id="events" class="container px-0">
+                <div class="card">
+                    <div class="card-body bg-color">
+                        <div class="row">
+                            <div class="col-lg-3"></div>
+                            <div class="col-lg-6 col-md-12 col-sm-12">
+                                <div class="py-4 ">
+                                    <h5><u>Events</u></h5>
+                                </div>
+                                <form  class=" px-3">
+                                    <div class="mb-3 ">
+                                         <label asp-for="EventTitle" class="form-label text-capitalize " >Event Title</label>                                      
+                                        <input asp-for="EventTitle" id="EventTitle" class="form-control" value="" />
+                                        <span asp-validation-for="EventTitle" class="text-danger"></span>
+                                        
+                                    </div>
+                                    <div class="mb-3 ">
+                                         <label asp-for="EventNarrator" class="form-label text-capitalize ">Narrator</label>
+                                        <input asp-for="EventNarrator" id="EventNarrator" class="form-control" />
+                                       <span asp-validation-for="EventNarrator" class="text-danger"></span>
+                                    </div>
+                                    <div class="mb-3 ">
+                                        <label asp-for="EventPrice" class="form-label text-capitalize ">Price</label>
+                                        <input asp-for="EventPrice" id="EventPrice" class="form-control" />
+                                        <span asp-validation-for="EventPrice" class="text-danger"></span>
+                                    </div>
+                                    <div class="mb-3 ">
+                                        <label asp-for="EventTime_Place" class="form-label text-capitalize ">Time & Place</label>
+                                        <input asp-for="EventTime_Place" id="EventTime_Place" class="form-control" />
+                                        <span asp-validation-for="EventTime_Place" class="text-danger"></span>
+                                    </div>
+
+                                    <div class="mb-3 ">
+                                        <label asp-for="EventDesc" class="form-label text-capitalize ">Description</label>
+                                        <input asp-for="EventDesc" id="EventDesc" class="form-control" />
+                                       <span asp-validation-for="EventDesc" class="text-danger"></span>
+                                    </div>
+                                    <div>
+                                        <a href="#" class="btn font-italic mb-3 text-primary" style="font-size: 10px; ">
+                                            <u>Upload a picture <i class="fa fa-upload fa-1x"></i></u>
+
+                                        </a>
+                                    </div>
+                                    <button id="btnEvent" class="btn btn-primary mb-4" style=" font-size: 10px;">Post</button>
+                                </form>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Event end -->
+
+
+
+            <!-- Islamic Classes Beginning -->
+            <section id="ISclasse" class="container px-0">
+                <div class="card">
+                    <div class="card-body bg-color">
+                        <div class="row">
+                            <div class="col-lg-3"></div>
+                            <div class="col-lg-6 col-md-12 col-sm-12">
+                                <div class="py-4 ">
+                                    <h5><u>Islamic Classes</u></h5>
+                                </div>
+                                 <form asp-action="CreateClass" method="post" class=" px-3">
+                                    <div class="mb-3 ">
+                                         <label asp-for="ClassTitle" class="form-label text-capitalize " >Class Title</label>                                      
+                                        <input asp-for="ClassTitle" class="form-control" value=""/>
+                                        <span asp-validation-for="ClassTitle" class="text-danger"></span>
+                                    </div>
+                                    <div class="mb-3 ">
+                                        <label asp-for="IslamicClassGuest" class="form-label text-capitalize " >Guest</label>                                      
+                                        <input asp-for="IslamicClassGuest" class="form-control" value=""/>
+                                        <span asp-validation-for="IslamicClassGuest" class="text-danger"></span>
+                                    </div>
+                                    <div class="mb-3 ">
+                                         <label asp-for="IslamicClassTime_Place" class="form-label text-capitalize " >Time & Place</label>                                      
+                                        <input asp-for="IslamicClassTime_Place" class="form-control" value=""/>
+                                        <span asp-validation-for="IslamicClassTime_Place" class="text-danger"></span>
+                                    </div>
+                                    <div class="mb-3 ">
+                                        <label asp-for="ClassDescription" class="form-label text-capitalize " >The Class</label>                                      
+                                        <input asp-for="ClassDescription" class="form-control" value=""/>
+                                        <span asp-validation-for="ClassDescription" class="text-danger"></span>
+                                    </div>
+
+                                    <button type="submit" class="btn btn-primary mb-4"style=" font-size: 10px;">Post</button>
+                                </form>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+
+            <!-- Islamic Classes End -->
+
+
+            <!-- Youth Program  Beginning-->
+            <section id="Yprogram" class="container px-0">
+                <div class="card">
+                    <div class="card-body bg-color">
+                        <div class="row">
+                            <div class="col-lg-3"></div>
+                            <div class="col-lg-6 col-md-12 col-sm-12">
+                                <div class="py-4 ">
+                                    <h5><u>Youth Program</u></h5>
+                                </div>
+                                 <form asp-action="" method="" class=" px-3">
+                                    <div class="mb-3 ">
+                                         <label asp-for="YouthProgramTitle" class="form-label text-capitalize " >Program Title</label>                                      
+                                        <input asp-for="YouthProgramTitle" id="YouthProgramTitle" class="form-control" value="" />
+                                        <span asp-validation-for="YouthProgramTitle" class="text-danger"></span>
+                                    </div>
+                                    <div class="mb-3 ">
+                                          <label asp-for="YouthProgramGuest" class="form-label text-capitalize " >Guest</label>                                      
+                                        <input asp-for="YouthProgramGuest" id="YouthProgramGuest" class="form-control" value="" />
+                                        <span asp-validation-for="YouthProgramGuest" class="text-danger"></span>
+                                    </div>
+                                    <div class="mb-3 ">
+                                        <label asp-for="YouthProgramTime" class="form-label text-capitalize " >Time</label>                                      
+                                        <input asp-for="YouthProgramTime" id="YouthProgramTime" class="form-control" value="" />
+                                        <span asp-validation-for="YouthProgramTime" class="text-danger"></span>
+                                    </div>
+                                    <div class="mb-3 ">
+                                        <label asp-for="YouthProgramPlace" class="form-label text-capitalize ">Place</label>
+                                        <input asp-for="YouthProgramPlace" id="YouthProgramPlace" class="form-control" value="" />
+                                        <span asp-validation-for="YouthProgramPlace" class="text-danger"></span>
+                                    </div>
+                                    <div class="mb-3 d-flex ">
+                                        <label asp-for="YouthProgramPrice" class="form-label text-capitalize " >Price</label>                                      
+                                        <input asp-for="YouthProgramPrice" id="YouthProgramPrice" class="form-control" value="" />
+                                        <span asp-validation-for="YouthProgramPrice" class="text-danger"></span>
+                                    </div>
+                                    <div class="mb-3 ">
+                                       <label asp-for="YouthProgramDesc" class="form-label text-capitalize " >Description</label>                                      
+                                        <input asp-for="YouthProgramDesc" id="YouthProgramDesc" class="form-control" value="" />
+                                        <span asp-validation-for="YouthProgramDesc" class="text-danger"></span>
+                                    </div>
+
+                                    <button id="btnYprogram"  class="btn btn-primary mb-4" style=" font-size: 10px;">Post</button>
+                                </form>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+
+
+            <!-- Youth Program End -->
+
+            <!-- After School and Day care Program Beginning -->
+
+
+            <section id="A-Sprogram" class="container px-0">
+                <div class="card">
+                    <div class="card-body bg-color">
+                        <div class="row">
+                            <div class="col-lg-3"></div>
+                            <div class="col-lg-6 col-md-12 col-sm-12">
+                                <div class="py-4 ">
+                                    <h5><u>After School and Day Care Program</u></h5>
+                                </div>
+                               <form asp-action="CreateAftSchl" method="post" class=" px-3">
+                                    <div class="mb-3 ">
+                                        <label asp-for="AftSchoolProgramTitle" class="form-label text-capitalize " >Program Title</label>                                      
+                                        <input asp-for="AftSchoolProgramTitle" class="form-control" value=""/>
+                                        <span asp-validation-for="AftSchoolProgramTitle" class="text-danger"></span>
+                                    </div>
+
+                                    <div class="mb-3 ">
+                                          <label asp-for="AftSchoolProgramTimePlace" class="form-label text-capitalize " >Time & Place</label>                                      
+                                        <input asp-for="AftSchoolProgramTimePlace" class="form-control" value=""/>
+                                        <span asp-validation-for="AftSchoolProgramTimePlace" class="text-danger"></span>
+                                    </div>
+                                    <div class="mb-3 d-flex ">
+                                       <label asp-for="AftSchoolProgramPrice" class="form-label text-capitalize " >Price</label>                                      
+                                        <input asp-for="AftSchoolProgramPrice" class="form-control" value=""/>
+                                        <span asp-validation-for="AftSchoolProgramPrice" class="text-danger"></span>
+                                    </div>
+                                    <div class="mb-3 ">
+                                        <label asp-for="AftSchoolProgramDesc" class="form-label text-capitalize " >The Program</label>                                      
+                                        <input asp-for="AftSchoolProgramDesc" class="form-control" value=""/>
+                                        <span asp-validation-for="AftSchoolProgramDesc" class="text-danger"></span>
+                                    </div>
+
+                                    <button type="submit" class="btn btn-primary mb-4" style=" font-size: 10px;">Post</button>
+                                </form>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+
+            <!-- After School Day Care Program End -->
+
+        </div>
+
+    </div>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.6.3.js"
+            integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM="
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script src="./js/jquery-3.6.3.min.js"></script>
+    <script src=".js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+
+           //Youth Program End
+        $("#btnYprogram").click(function()
+           {
+            
+                event.preventDefault();
+
+                const datat = {
+                    YouthProgramTitle: $("#YouthProgramTitle").val(),
+                    YouthProgramGuest: $("#YouthProgramGuest").val(),
+                    YouthProgramPrice: $("#YouthProgramPrice").val(),
+                    YouthProgramPlace: $("#YouthProgramPlace").val(),
+                    YouthProgramTime: $("#YouthProgramTime").val(),
+                    YouthProgramDesc: $("#YouthProgramDesc").val()
+                };
+
+                $.ajax(
+                  {
+                    type: "POST",
+                    url: "/api/YouthProgram",
+                    data: JSON.stringify(datat),
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: function () 
+                    {
+                        alert('bon');
+                        console.log();
+                    },
+                    error: function (xhr, status, error)
+                    {
+                        console.log(xhr, error);
+                        console.log("say some");
+                        alert("pas bon");
+                    }
+                  });
+             });
+//       Youth Program End
+
+/////     Event JQuery beginning
+            
+            $("#btnEvent").click(function()
+          {
+            event.preventDefault();
+                
+                const datat={
+                EventDesc: $("#EventDesc").val(),
+                EventTitle: $("#EventTitle").val(),
+                EventNarrator: $("#EventNarrator").val(),
+                EventPrice: $("#EventPrice").val(),
+                EventTime_Place: $("#EventTime_Place").val(),
+                    EventImageUrl:""};
+
+            $.ajax({
+                type: "POST",
+                url: "/api/Events",
+                data: JSON.stringify(datat) ,
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function () {
+                    alert('bon');
+                    console.log();
+                },
+                error: function (xhr, status, error) {
+                    console.log(xhr, error);
+                    console.log("say some");
+                    alert("pas bon");
+                }
+           } );
+           });
+///    Event Jquery End
+
+        });
+    </script>

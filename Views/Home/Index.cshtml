@@ -1,0 +1,70 @@
+﻿
+@model Masjid.Services.HomeService
+
+  @{
+        Layout = "_Layout";
+    }
+
+
+<!-- Feed beginning -->
+
+        <div id="example" class="carousel carousel-dark slide" data-ride="carousel">
+            <ul class="carousel-indicators ">
+                <li data-target="#example" data-slide-to='0' class="active bg-dark"></li>
+                @for (var i = 1; i < @Model.GetFeeds.Count; i++)
+                {
+                    <li data-target="#example" data-slide-to='@i' class=" bg-dark"></li>
+
+                }
+            </ul>
+
+            <!-- images -->
+            <div class="carousel-inner p-0 ">
+                <div class="carousel-item active ">
+                    <div class="card " style="min-height: 80vh">
+                        <div class="card-header font-italic text-capitalize"
+                             style="background-color: @Model.GetFeeds[0].FeedColor">
+                            <strong><h3>@Model.GetFeeds[0].FeedTitle</h3></strong>
+                        </div>
+                        <div class="card-body bg-light">
+                            <h5 class="card-title">@Model.GetFeeds[0].FeedType </h5>
+                            <p class="card-text announcement" style="font-weight: 100;">
+                                @Model.GetFeeds[0].FeedDesc
+                            </p>
+                            <footer class="blockquote-footer text-right">@Model.GetFeeds[0].FeedNarrator</footer>
+                        </div>
+                    </div>
+                </div>
+                @for (var i = 1; i < @Model.GetFeeds.Count; i++)
+                {
+
+                    <div class="carousel-item ">
+                        <div class="card " style="min-height: 80vh">
+                            <div class="card-header font-italic text-capitalize"
+                                 style="background-color: @Model.GetFeeds[i].FeedColor">
+                                <strong><h3>@Model.GetFeeds[i].FeedTitle</h3></strong>
+                            </div>
+                            <div class="card-body bg-light">
+                                <h5 class="card-title">@Model.GetFeeds[i].FeedType </h5>
+                                <p class="card-text announcement" style="font-weight: 100;">
+                                    @Model.GetFeeds[i].FeedDesc
+                                </p>
+                                <footer class="blockquote-footer text-right">@Model.GetFeeds[i].FeedNarrator</footer>
+                            </div>
+                        </div>
+                    </div>
+                }
+
+
+            </div>
+            <!-- end of images -->
+            <a href="#example" class="carousel-control-prev" data-slide="prev">
+                <span class="carousel-control-prev-icon text-dark"></span>
+            </a>
+            <a href="#example" class="carousel-control-next " data-slide="next">
+                <span class="carousel-control-next-icon text-dark "></span>
+            </a>
+        </div>
+  
+
+<!-- Feed end -->

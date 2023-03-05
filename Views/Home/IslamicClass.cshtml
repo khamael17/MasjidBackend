@@ -1,0 +1,34 @@
+﻿@model Masjid.Services.HomeService
+
+@{
+    Layout = "_Layout";
+}
+
+@foreach(var prog in Model.GetIslamicClassess){
+<form class="mb-2">
+    <div class="card bg-light" style="min-height: 80vh">
+        <img class="card-img-top" src="/img/Islamicclass.jpeg" alt="Card image cap">
+        <div class="card-body ">
+            <h5 class="card-title islamicClass">
+                <u>@prog.ClassTitle</u>
+                <h6 class="islamicClass">Guest: <span class="  imam-nav-name "><u>@prog.IslamicClassGuest</u></span></h6>
+            </h5>
+            <h6 class="islamicClass">
+                Time & Place: <span class="  imam-nav-name ">
+                    @prog.IslamicClassTime_Place
+                </span>
+            </h6>
+            
+            <p class="card-text">
+                @prog.ClassDescription
+            </p>
+            <button type="submit" class="btn btn-danger mb-4" style=" font-size: 10px;">Delete</button>
+        </div>
+    </div>
+</form>
+}
+
+
+<script>
+ 
+</script>
