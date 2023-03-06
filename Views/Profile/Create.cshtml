@@ -289,52 +289,57 @@
                                 <div class="py-4 ">
                                     <h5><u>Feed</u></h5>
                                 </div>
-                                <form asp-action="CreateFeed" method="post" class=" px-3">
+                                <form  class=" px-3">
+                                    <div class="mb-3 ">
+                                        <label asp-for="FeedTitle" class="form-label text-capitalize ">Title</label>
+                                        <input asp-for="FeedTitle" id="FeedTitle" class="form-control" value="" />
+                                        <span asp-validation-for="FeedTitle" class="text-danger"></span>
+                                    </div>
                                     <div class="mb-3 ">
                                         <label asp-for="FeedDesc" class="form-label text-capitalize " >Feed</label>                                      
-                                        <input asp-for="FeedDesc" class="form-control" value=""/>
+                                        <input asp-for="FeedDesc" id="FeedDesc" class="form-control" value="" />
                                         <span asp-validation-for="FeedDesc" class="text-danger"></span>
                                     </div>
                                     <div class="mb-3 ">
                                        <label asp-for="FeedNarrator" class="form-label text-capitalize " >Narrator</label>                                      
-                                        <input asp-for="FeedNarrator" class="form-control" value=""/>
+                                        <input asp-for="FeedNarrator" id="FeedNarrator" class="form-control" value="" />
                                         <span asp-validation-for="FeedNarrator" class="text-danger"></span>
                                     </div>
-                                    <fieldset id="kk" tag="kk" class="row mb-3">
+                                    <fieldset id="" tag="" class="row mb-3">
 
                                         <div class="col-sm-10">
                                             <div class="form-check">
                                                 <input asp-for="FeedType" class="form-check-input" type="radio" name="gridRadios"
-                                                    id="gridRadios1" value="blue" checked>
+                                                       id="gridRadios1" value="General Announcement" checked>
                                                 <label class="form-check-label" for="gridRadios1">
                                                     General Announcement
                                                 </label>
                                             </div>
                                             <div class="form-check">
                                                 <input asp-for="FeedType" class="form-check-input bg-warning" type="radio"
-                                                    name="gridRadios" id="gridRadios2" value="gold">
+                                                    name="gridRadios2" id="gridRadios2" value="Funds Raising">
                                                 <label class="form-check-label" for="gridRadios2">
                                                     Fund Raising
                                                 </label>
                                             </div>
                                             <div class="form-check">
                                                 <input asp-for="FeedType" class="form-check-input bg-danger" type="radio" name="gridRadios"
-                                                    id="gridRadios2" value="red">
-                                                <label class="form-check-label" for="gridRadios2">
+                                                    id="gridRadios3" value="Funeral">
+                                                <label class="form-check-label" for="gridRadios3">
                                                     Funeral
                                                 </label>
                                             </div>
                                             <div class="form-check">
                                                 <input asp-for="FeedType" class="form-check-input bg-success" type="radio"
-                                                    name="gridRadios" id="gridRadios2" value="green">
-                                                <label class="form-check-label" for="gridRadios2">
+                                                    name="gridRadios4" id="gridRadios4" value="Request For Duaa">
+                                                <label class="form-check-label" for="gridRadios4">
                                                     Request for Duaa
                                                 </label>
                                             </div>
 
                                         </div>
                                     </fieldset>
-                                    <button type="submit" class="btn btn-primary mb-4"style=" font-size: 10px;">Post</button>
+                                    <button id="btnFeed" class="btn btn-primary mb-4"style=" font-size: 10px;">Post</button>
                                 </form>
                             </div>
 
@@ -403,7 +408,7 @@
 
 
             <!-- Islamic Classes Beginning -->
-            <section id="ISclasse" class="container px-0">
+            <section  class="container px-0">
                 <div class="card">
                     <div class="card-body bg-color">
                         <div class="row">
@@ -412,29 +417,29 @@
                                 <div class="py-4 ">
                                     <h5><u>Islamic Classes</u></h5>
                                 </div>
-                                 <form asp-action="CreateClass" method="post" class=" px-3">
+                                 <form  class=" px-3">
                                     <div class="mb-3 ">
                                          <label asp-for="ClassTitle" class="form-label text-capitalize " >Class Title</label>                                      
-                                        <input asp-for="ClassTitle" class="form-control" value=""/>
+                                        <input asp-for="ClassTitle" id="ClassTitle" class="form-control" value="" />
                                         <span asp-validation-for="ClassTitle" class="text-danger"></span>
                                     </div>
                                     <div class="mb-3 ">
                                         <label asp-for="IslamicClassGuest" class="form-label text-capitalize " >Guest</label>                                      
-                                        <input asp-for="IslamicClassGuest" class="form-control" value=""/>
+                                        <input asp-for="IslamicClassGuest" id="IslamicClassGuest" class="form-control" value="" />
                                         <span asp-validation-for="IslamicClassGuest" class="text-danger"></span>
                                     </div>
                                     <div class="mb-3 ">
                                          <label asp-for="IslamicClassTime_Place" class="form-label text-capitalize " >Time & Place</label>                                      
-                                        <input asp-for="IslamicClassTime_Place" class="form-control" value=""/>
+                                        <input asp-for="IslamicClassTime_Place" id="IslamicClassTime_Place" class="form-control" value="" />
                                         <span asp-validation-for="IslamicClassTime_Place" class="text-danger"></span>
                                     </div>
                                     <div class="mb-3 ">
                                         <label asp-for="ClassDescription" class="form-label text-capitalize " >The Class</label>                                      
-                                        <input asp-for="ClassDescription" class="form-control" value=""/>
+                                        <input asp-for="ClassDescription" id="ClassDescription" class="form-control" value="" />
                                         <span asp-validation-for="ClassDescription" class="text-danger"></span>
                                     </div>
 
-                                    <button type="submit" class="btn btn-primary mb-4"style=" font-size: 10px;">Post</button>
+                                    <button id="btnIslamic"  class="btn btn-primary mb-4"style=" font-size: 10px;">Post</button>
                                 </form>
                             </div>
 
@@ -580,8 +585,80 @@
 
 
 
+            ///Feed Begiinning
 
 
+        $("#btnFeed").click(function () {
+
+            event.preventDefault();
+
+            const datat = {
+                FeedDesc: $("#FeedDesc").val(),
+                FeedNarrator: $("#FeedNarrator").val(),
+                FeedTitle: $("#FeedTitle").val(),
+                FeedType: $("#gridRadios1").val() ;//+ $("#gridRadios2").val() + $("#gridRadios3").val() +$("#gridRadios4").val();
+
+            };
+
+            $.ajax(
+                {
+                    type: "POST",
+                    url: "/api/Feed",
+                    data: JSON.stringify(datat),
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: function () {
+                        alert('bon');
+
+                    },
+                    error: function (xhr, status, error) {
+                        console.log(xhr, error);
+
+                    }
+                });
+        });
+
+
+
+
+            /// Feed End
+
+
+           //Islamic Class beginning
+
+        $("#btnIslamic").click(function () {
+
+            event.preventDefault();
+
+            const datat = {
+                ClassTitle: $("#ClassTitle").val(),
+                IslamicClassGuest: $("#IslamicClassGuest").val(),
+                IslamicClassTime_Place: $("#IslamicClassTime_Place").val(),
+                ClassDescription: $("#ClassDescription").val()
+                
+            };
+
+            $.ajax(
+                {
+                    type: "POST",
+                    url: "/api/IslamicClass",
+                    data: JSON.stringify(datat),
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: function () {
+                        alert('bon');
+                       
+                    },
+                    error: function (xhr, status, error) {
+                        console.log(xhr, error);
+                        
+                    }
+                });
+        });
+
+
+
+          ///Islamic class end
 
             //Event beginning
             $("#btnYprogram").click(function () {
