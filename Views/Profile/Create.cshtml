@@ -309,7 +309,7 @@
 
                                         <div class="col-sm-10">
                                             <div class="form-check">
-                                                <input asp-for="FeedType" class="form-check-input" type="radio" name="gridRadios"
+                                                <input asp-for="FeedType" class="form-check-input bg-primary" type="radio" name="gridRadios"
                                                        id="gridRadios1" value="General Announcement" checked>
                                                 <label class="form-check-label" for="gridRadios1">
                                                     General Announcement
@@ -317,7 +317,7 @@
                                             </div>
                                             <div class="form-check">
                                                 <input asp-for="FeedType" class="form-check-input bg-warning" type="radio"
-                                                    name="gridRadios2" id="gridRadios2" value="Funds Raising">
+                                                    name="gridRadios" id="gridRadios2" value="Funds Raising">
                                                 <label class="form-check-label" for="gridRadios2">
                                                     Fund Raising
                                                 </label>
@@ -331,7 +331,7 @@
                                             </div>
                                             <div class="form-check">
                                                 <input asp-for="FeedType" class="form-check-input bg-success" type="radio"
-                                                    name="gridRadios4" id="gridRadios4" value="Request For Duaa">
+                                                    name="gridRadios" id="gridRadios4" value="Request For Duaa">
                                                 <label class="form-check-label" for="gridRadios4">
                                                     Request for Duaa
                                                 </label>
@@ -521,30 +521,30 @@
                                 <div class="py-4 ">
                                     <h5><u>After School and Day Care Program</u></h5>
                                 </div>
-                               <form asp-action="CreateAftSchl" method="post" class=" px-3">
+                               <form  class=" px-3">
                                     <div class="mb-3 ">
                                         <label asp-for="AftSchoolProgramTitle" class="form-label text-capitalize " >Program Title</label>                                      
-                                        <input asp-for="AftSchoolProgramTitle" class="form-control" value=""/>
+                                        <input asp-for="AftSchoolProgramTitle" id="AftSchoolProgramTitle" class="form-control" value="" />
                                         <span asp-validation-for="AftSchoolProgramTitle" class="text-danger"></span>
                                     </div>
 
                                     <div class="mb-3 ">
                                           <label asp-for="AftSchoolProgramTimePlace" class="form-label text-capitalize " >Time & Place</label>                                      
-                                        <input asp-for="AftSchoolProgramTimePlace" class="form-control" value=""/>
+                                        <input asp-for="AftSchoolProgramTimePlace" id="AftSchoolProgramTimePlace" class="form-control" value="" />
                                         <span asp-validation-for="AftSchoolProgramTimePlace" class="text-danger"></span>
                                     </div>
                                     <div class="mb-3 d-flex ">
                                        <label asp-for="AftSchoolProgramPrice" class="form-label text-capitalize " >Price</label>                                      
-                                        <input asp-for="AftSchoolProgramPrice" class="form-control" value=""/>
+                                        <input asp-for="AftSchoolProgramPrice" id="AftSchoolProgramPrice" class="form-control" value="" />
                                         <span asp-validation-for="AftSchoolProgramPrice" class="text-danger"></span>
                                     </div>
                                     <div class="mb-3 ">
                                         <label asp-for="AftSchoolProgramDesc" class="form-label text-capitalize " >The Program</label>                                      
-                                        <input asp-for="AftSchoolProgramDesc" class="form-control" value=""/>
+                                        <input asp-for="AftSchoolProgramDesc" id="AftSchoolProgramDesc" class="form-control" value="" />
                                         <span asp-validation-for="AftSchoolProgramDesc" class="text-danger"></span>
                                     </div>
 
-                                    <button type="submit" class="btn btn-primary mb-4" style=" font-size: 10px;">Post</button>
+                                    <button  id="btnAftSchool" class="btn btn-primary mb-4" style=" font-size: 10px;">Post</button>
                                 </form>
                             </div>
 
@@ -583,20 +583,68 @@
         $(document).ready(function(){
 
 
+///After School program Beginning
 
+        $("#btnAftSchool").click(function () {
+
+            event.preventDefault();
+
+            const datat = {
+                AftSchoolProgramTitle: $("#AftSchoolProgramTitle").val(),
+                AftSchoolProgramGuest: $("#AftSchoolProgramGuest").val(),
+                AftSchoolProgramPrice: $("#AftSchoolProgramPrice").val(),
+                AftSchoolProgramPlace: $("#AftSchoolProgramPlace").val(),
+                AftSchoolProgramTime: $("#AftSchoolProgramTime").val(),
+                AftSchoolProgramDesc: $("#AftSchoolProgramDesc").val()
+            };
+
+            $.ajax(
+                {
+                    type: "POST",
+                    url: "/api/AftSchlProgram",
+                    data: JSON.stringify(datat),
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: function () {
+                        alert('bon');
+                    
+                    },
+                    error: function (xhr, status, error) {
+                        console.log(xhr, error);
+                        
+                    }
+                });
+        });
+
+
+/// AFter SCHool program END
+
+            var feedtype="";
+        $("#gridRadios1").change( function(){
+            feedtype = $("#gridRadios1").val();
+        });
+        $("#gridRadios2").change(function(){
+            feedtype = $("#gridRadios2").val();
+        });
+        $("#gridRadios3").change(function(){
+            feedtype = $("#gridRadios3").val();
+        });
+        $("#gridRadios4").change(function(){
+            feedtype = $("#gridRadios4").val();
+        });
 
             ///Feed Begiinning
 
 
         $("#btnFeed").click(function () {
-
+            
             event.preventDefault();
 
             const datat = {
                 FeedDesc: $("#FeedDesc").val(),
                 FeedNarrator: $("#FeedNarrator").val(),
                 FeedTitle: $("#FeedTitle").val(),
-                FeedType: $("#gridRadios1").val() ;//+ $("#gridRadios2").val() + $("#gridRadios3").val() +$("#gridRadios4").val();
+                FeedType: feedtype
 
             };
 

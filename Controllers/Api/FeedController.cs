@@ -21,7 +21,7 @@ namespace Masjid.Controllers.Api
         [HttpPost]
         public IActionResult CreateFeed(Feed feed) {
 
-            if (feed.FeedType == "General Announcement") feed.FeedColor = "blue";
+            if (feed.FeedType == "General Announcement") feed.FeedColor = "cyan";
             else if (feed.FeedType == "Request For Duaa") feed.FeedColor = "green";
             else if (feed.FeedType == "Funeral") feed.FeedColor = "red";
             else if (feed.FeedType == "Funds Raising") feed.FeedColor = "gold";
