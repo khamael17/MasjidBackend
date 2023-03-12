@@ -9,10 +9,12 @@ namespace Masjid.ViewModels
 #region AfterSchoolProgram
         public int AftSchoolProgramId { get; set; }
         public string? AftSchoolProgramDesc { get; set; } = String.Empty!;
-        public string? AftSchoolProgramTimePlace { get; set; } = String.Empty!;
+        public string? AftSchoolProgramPlace { get; set; } = String.Empty!;
         public string? AftSchoolProgramPrice { get; set; } = String.Empty!;
         public string? AftSchoolProgramTitle { get; set; } = String.Empty!;
         public string? AftSchoolProgramGuest { get; set; } = String.Empty!;
+      
+        public string? AftSchoolProgramTime { get; set; } = String.Empty!;
         #endregion
 
         #region Hadith
@@ -46,17 +48,14 @@ namespace Masjid.ViewModels
         public string? IslamicClassGuest { get; set; } = String.Empty!;
         public string? IslamicClassTime_Place { get; set; } = String.Empty!;
         public string? ClassDescription { get; set; } = String.Empty!;
-#endregion
+        #endregion
 
 
         #region Profile Imam
-        public int ProfileId { get; set; }
-        public string? FirstName { get; set; } = String.Empty!;
-        public string? LastName { get; set; } = String.Empty!;
-        public string? InstitutionName { get; set; } = String.Empty!;
-        public string? OldPassword { get; set; } = String.Empty!;
-        public string? NewPassword { get; set; } = String.Empty!;
-        public string? ConfirmPassword { get; set; } = String.Empty!;
+        public string Imam_First_Name { get; set; } = String.Empty;
+
+        public string Imam_Last_Name { get; set; } = String.Empty;
+
         public string? ProfileImageUrl { get; set; } = String.Empty!;
 #endregion
 
@@ -78,6 +77,16 @@ namespace Masjid.ViewModels
         public string? Maghrib { get; set; } = String.Empty!;
         public string? Isha { get; set; } = String.Empty!;
         public string Jummah { get; set; } = String.Empty!;
+        #endregion
+
+
+        #region Institution
+        public string? InstitutionName { get; set; } = String.Empty!;
+        public string? Institution_Email { get; set; } = String.Empty!;
+        public string? OldPassword { get; set; } = String.Empty!;
+       
+        public string? NewPassword { get; set; } = String.Empty!;
+        public string? ConfirmPassword { get; set; } = String.Empty!;
         #endregion
 
     }

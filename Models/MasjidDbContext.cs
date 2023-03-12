@@ -1,8 +1,10 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 
 namespace Masjid.Models
 {
-    public class MasjidDbContext:DbContext
+    public class MasjidDbContext:IdentityDbContext
     {
         public MasjidDbContext( DbContextOptions<MasjidDbContext> options ):base(options)
         {

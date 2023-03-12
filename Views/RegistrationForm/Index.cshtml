@@ -1,0 +1,120 @@
+﻿@model Masjid.Services.HomeService
+
+@{
+    Layout = "_Layout";
+}
+
+
+
+
+
+
+
+<!-- Feed beginning -->
+
+
+
+
+    <form class="mb-2 needs-validation" style="max-height: 40vh" novalidate>
+        <div class="card bg-light d-flex justify-content-center  px-5">
+            <div class="card-body px-0">
+                <h3 class="card-title mb-4  ">Registration Form</h3>
+                <div class="">
+                    <div class="input-group mb-3">
+                        <span class="input-group-text font-italic bg-success text-white" id="basic-addon1"><strong>Youth summer camp</strong></span>
+                    </div>
+                    <div class=" mb-3">
+                        <label for="validationCustom01">First name</label>
+                        <input type="text" class="form-control" id="validationCustom01" placeholder="" value="" required>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                        <div class="invalid-feedback">
+                            Please provide a Name.
+                        </div>
+                    </div>
+                    <div class=" mb-3">
+                        <label for="validationCustom02">Last name</label>
+                        <input type="text" class="form-control" id="validationCustom02" placeholder="" value="" required>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                        <div class="invalid-feedback">
+                            Please provide a Name.
+                        </div>
+                    </div>
+                    <div class=" mb-3">
+                        <label for="validationCustom03">Email</label>
+                        <input type="text" class="form-control" id="validationCustom03" placeholder="" required>
+                        <div class="invalid-feedback">
+                            Please provide a valid Email.
+                        </div>
+                    </div>
+                    <div class=" mb-3">
+                        <label for="validationCustom03">Phone Number</label>
+                        <input type="text" class="form-control" id="validationCustom03" placeholder="" required>
+                        <div class="invalid-feedback">
+                            Please provide a valid Phone Number.
+                        </div>
+                    </div>
+                </div>
+
+                <button class="btn btn-primary" type="submit" >Register</button>
+            </div>
+        </div>
+    </form>
+
+
+
+
+<!-- Feed end -->
+
+<script>
+    // Example starter JavaScript for disabling form submissions if there are invalid fields
+    (function () {
+        'use strict';
+        window.addEventListener('load', function () {
+            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            var forms = document.getElementsByClassName('needs-validation');
+            // Loop over them and prevent submission
+            var validation = Array.prototype.filter.call(forms, function (form) {
+                form.addEventListener('submit', function (event) {
+                    if (form.checkValidity() === false) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                    }
+                    else{
+                        sendEmail();
+                    }
+                    form.classList.add('was-validated');
+                }, false);
+            });
+        }, false);
+    })();
+
+    function sendEmail(){
+        var datat= {
+            Subject: "test",
+            Email: "",
+            Phone:"",
+            FirstName: "",
+            LastName: ""
+      
+                    };
+$.ajax({
+    type: "POST",
+    url: "/RegistrationForm",
+    data: JSON.stringify( datat),
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+    success: function (data) {
+        alert("Email sent successfully");
+    }, 
+            error: function (xhr, ajaxOptions, thrownError,data) {
+                console.log(xhr.status);
+                console.log(thrownError);
+                console.log(data)
+            }
+});
+    }
+</script>

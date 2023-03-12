@@ -38,6 +38,9 @@
     <script defer src="./js/brands.js"></script>
     <script defer src="./js/solid.js"></script>
     <script defer src="./js/fontawesome.js"></script>
+
+    <script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
 </head>
 
 <body>
@@ -84,6 +87,9 @@
                           <u>After-School Program</u></a
                         >
                       </li>
+                        <li class="list-group-item">
+                            <a  asp-controller="Home" asp-action="Index" class="btn btn-success"> <u>Back To Website</u></a>
+                        </li>
                     
                   </ul>
                   <!-- <div class="card-footer p-0">
@@ -117,8 +123,8 @@
                             <div class="col d-flex justify-content-center">
                                 <div class="prof-container">
                                     <div class="prof text-center">
-                                        <img src="~/img/sheikh.jfif" alt="" class="img-thumbnail rounded-circle d-md-block" />
-                                        <h7 class="imam-nav-name">Imam Khalilou</h7>
+                                        <img src="~/img/imam.png" alt="" class="img-thumbnail rounded-circle d-md-block" />
+                                        <h7 class="imam-nav-name">Imam @ViewBag.FirstName</h7>
 
                                         <div>
                                             <a href="#" class="btn font-italic p-0 text-primary"
@@ -138,14 +144,19 @@
                             <div class="col-lg-3"></div>
                             <div class="col-lg-6 px-0">
 
-                                <form asp-action="Createprof" method="post" class=" px-3">
+                                <form asp-action="CreateInstitution" method="post" class=" px-3">
                                     <div class="mb-3 text-center">
-                                        <label asp-for="InstitutionName" class="form-label text-capitalize " >Institution Name</label>                                      
-                                         <input asp-for="InstitutionName" class="form-control" value=""/>
+                                        <label asp-for="InstitutionName" class="form-label text-capitalize " >Institution Name</label>
+                                        <input asp-for="InstitutionName" id="InstitutionName" class="form-control" value="" />
                                          <span asp-validation-for="InstitutionName" class="text-danger"></span>
                                         <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
                                     </div>
-
+                                    <div class="mb-3 text-center">
+                                        <label asp-for="Institution_Email" class="form-label text-capitalize ">Institution Email</label>
+                                        <input asp-for="Institution_Email" id="Institution_Email" class="form-control" value="" />
+                                        <span asp-validation-for="Institution_Email" class="text-danger"></span>
+                                        <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
+                                    </div>
 
                                     <button type="submit" class="btn btn-primary"
                                         style=" font-size: 10px;">Update</button>
@@ -163,20 +174,20 @@
                                     <div class="py-4 ">
                                         <h5><u>Name</u></h5>
                                     </div>
-                                     <form asp-action="CreateName" method="post" class=" px-3">
+                                     <form  id="Name" class=" px-3">
                                         <div class="mb-3 ">
-                                            <label asp-for="FirstName" class="form-label text-capitalize " >First Name</label>                                      
-                                                    <input asp-for="FirstName" class="form-control" value=""/>
-                                                    <span asp-validation-for="FirstName" class="text-danger"></span>
+                                            <label asp-for="Imam_First_Name" class="form-label text-capitalize ">First Name</label>
+                                            <input asp-for="Imam_First_Name" id="Imam_First_Name" class="form-control" value="" />
+                                            <span asp-validation-for="Imam_First_Name" class="text-danger"></span>
                                            
                                         </div>
                                         <div class="mb-3">
-                                            <label asp-for="LastName" class="form-label text-capitalize " >Last Name</label>                                      
-                                                    <input asp-for="LastName" class="form-control" value=""/>
-                                                    <span asp-validation-for="LastName" class="text-danger"></span>
+                                            <label asp-for="Imam_Last_Name" class="form-label text-capitalize ">Last Name</label>
+                                            <input asp-for="Imam_Last_Name" id="Imam_Last_Name" class="form-control" value="" />
+                                            <span asp-validation-for="Imam_Last_Name" class="text-danger"></span>
                                         </div>
 
-                                        <button type="submit" class="btn btn-primary" style=" font-size: 10px;">Update
+                                        <button id="btnImam" class="btn btn-primary" style=" font-size: 10px;">Update
                                             Name</button>
                                     </form>
                                 </div>
@@ -521,17 +532,26 @@
                                 <div class="py-4 ">
                                     <h5><u>After School and Day Care Program</u></h5>
                                 </div>
-                               <form  class=" px-3">
+                               <form   px-3">
                                     <div class="mb-3 ">
                                         <label asp-for="AftSchoolProgramTitle" class="form-label text-capitalize " >Program Title</label>                                      
                                         <input asp-for="AftSchoolProgramTitle" id="AftSchoolProgramTitle" class="form-control" value="" />
                                         <span asp-validation-for="AftSchoolProgramTitle" class="text-danger"></span>
                                     </div>
-
                                     <div class="mb-3 ">
-                                          <label asp-for="AftSchoolProgramTimePlace" class="form-label text-capitalize " >Time & Place</label>                                      
-                                        <input asp-for="AftSchoolProgramTimePlace" id="AftSchoolProgramTimePlace" class="form-control" value="" />
-                                        <span asp-validation-for="AftSchoolProgramTimePlace" class="text-danger"></span>
+                                        <label asp-for="AftSchoolProgramGuest" class="form-label text-capitalize ">Program Title</label>
+                                        <input asp-for="AftSchoolProgramGuest" id="AftSchoolProgramGuest" class="form-control" value="" />
+                                        <span asp-validation-for="AftSchoolProgramGuest" class="text-danger"></span>
+                                    </div>
+                                    <div class="mb-3 ">
+                                        <label asp-for="AftSchoolProgramTime" class="form-label text-capitalize ">Program Title</label>
+                                        <input asp-for="AftSchoolProgramTime" id="AftSchoolProgramTime" class="form-control" value="" />
+                                        <span asp-validation-for="AftSchoolProgramTime" class="text-danger"></span>
+                                    </div>
+                                    <div class="mb-3 ">
+                                          <label asp-for="AftSchoolProgramPlace" class="form-label text-capitalize " >Time & Place</label>                                      
+                                        <input asp-for="AftSchoolProgramPlace" id="AftSchoolProgramPlace" class="form-control" value="" />
+                                        <span asp-validation-for="AftSchoolProgramPlace" class="text-danger"></span>
                                     </div>
                                     <div class="mb-3 d-flex ">
                                        <label asp-for="AftSchoolProgramPrice" class="form-label text-capitalize " >Price</label>                                      
@@ -583,41 +603,48 @@
         $(document).ready(function(){
 
 
-///After School program Beginning
 
-        $("#btnAftSchool").click(function () {
+
+            ///Imam Nmae Begiinning
+
+        $("#btnImam").click(function () {
 
             event.preventDefault();
 
             const datat = {
-                AftSchoolProgramTitle: $("#AftSchoolProgramTitle").val(),
-                AftSchoolProgramGuest: $("#AftSchoolProgramGuest").val(),
-                AftSchoolProgramPrice: $("#AftSchoolProgramPrice").val(),
-                AftSchoolProgramPlace: $("#AftSchoolProgramPlace").val(),
-                AftSchoolProgramTime: $("#AftSchoolProgramTime").val(),
-                AftSchoolProgramDesc: $("#AftSchoolProgramDesc").val()
+                Imam_First_Name: $("#Imam_First_Name").val(),
+                Imam_Last_Name: $("#Imam_Last_Name").val()
+                
             };
+
+         
 
             $.ajax(
                 {
                     type: "POST",
-                    url: "/api/AftSchlProgram",
+                    url: "/api/Imam",
                     data: JSON.stringify(datat),
                     contentType: "application/json; charset=utf-8",
                     dataType: "json",
                     success: function () {
                         alert('bon');
-                    
+
                     },
                     error: function (xhr, status, error) {
-                        console.log(xhr, error);
-                        
+                        console.log(datat);
+                        alert('pas bon');
+                        location.reload();
                     }
                 });
+
+               
         });
 
 
-/// AFter SCHool program END
+
+
+            ///Imam name end
+
 
             var feedtype="";
         $("#gridRadios1").change( function(){
@@ -670,6 +697,46 @@
 
 
             /// Feed End
+
+
+
+        //After School program Beginning
+
+        $("#btnAftSchool").click(function () {
+
+            event.preventDefault();
+
+            const datat = {
+                AftSchoolProgramTitle: $("#AftSchoolProgramTitle").val(),
+                AftSchoolProgramGuest: $("#AftSchoolProgramGuest").val(),
+                AftSchoolProgramPrice: $("#AftSchoolProgramPrice").val(),
+                AftSchoolProgramPlace: $("#AftSchoolProgramPlace").val(),
+                AftSchoolProgramTime: $("#AftSchoolProgramTime").val(),
+                AftSchoolProgramDesc: $("#AftSchoolProgramDesc").val()
+            };
+
+            $.ajax(
+                {
+                    type: "POST",
+                    url: "/api/AftSchlProgram",
+                    data: JSON.stringify(datat),
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: function () {
+                        alert('bon');
+
+                    },
+                    error: function (xhr, status, error) {
+                        console.log(datat);
+                        alert('pas bon');
+                    }
+                });
+        });
+
+
+        /// AFter SCHool program END
+
+
 
 
            //Islamic Class beginning

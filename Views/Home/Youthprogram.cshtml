@@ -41,14 +41,53 @@
                     <li class="list-group-item bg-light">
                         <h6 class="youth-card">Place: <span class="  imam-nav-name "> @prog.YouthProgramPlace</span></h6>
                     </li>
-                </ul>
+                   </ul>
+                  @* <input type="hidden" name="YouthProgramId" id="YouthProgramId" class="form-control" value=@prog.YouthProgramId />*@
+                
                 <div class="card-body">
-                    <a href="#" class="card-link btn btn-warning">Register</a>
-                    <a href="#" class="card-link btn btn-danger">Delete</a>
+                        <a  asp-controller="RegistrationForm" asp-action="index" class="card-link btn btn-warning">Register</a>
+                        <a id="btnDelete" class="card-link btn btn-danger" onclick="remov(@prog.YouthProgramId)">Delete</a>
                 </div>
             </div>
         </form>
 
         }
 </div>
+
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous">
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.6.3.js"
+        integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM="
+        crossorigin="anonymous"></script>
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+           
+    });
+
+    function remov(id) {
+
+        $.ajax(
+            {
+                type: "DELETE",
+                url: "/api/YouthProgram/" + id,
+                success: function () {                   
+                    location.reload();
+                },
+                error: function (xhr, ajaxOptions, thrownError) {                  
+                    console.log(xhr.status);                  
+                    console.log(thrownError);
+                }
+            });
+
+    };
+
+    
+</script>
 </html>

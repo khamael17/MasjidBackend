@@ -29,5 +29,12 @@ namespace Masjid.Controllers.Api
            _profile.CreateYprogram( youthProgram );
         return new JsonResult(new { Success = true });
         }
+
+        [HttpDelete("{id}")]
+        public IActionResult DeleteYprogram( int id)
+        {
+            _profile.DeleteYprogram(id);
+            return NoContent();
+        }
     }
 }

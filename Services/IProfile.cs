@@ -5,6 +5,7 @@ namespace Masjid.Services
     public interface IProfile
     {
         public void CreateEvent(Event even);
+        public void DeleteEvent(int id);
         public void CreateHadith(Hadith hadith);
 
 
@@ -19,11 +20,12 @@ namespace Masjid.Services
 
 
         public void CreateFeed(Feed feed);
+        public void DeleteFeed(int id);
 
 
 
         public void CreateIslamicClass(IslamicClasse islamicClasse);
-
+        public void DeleteIslamicClass(int id);
 
         //public void CreateEvent()
         //{
@@ -33,10 +35,14 @@ namespace Masjid.Services
 
 
         public void CreateAftSchool(AftSchoolProgram aftSchoolProgram);
+        public void DeleteAftSchool(int id);
+
 
 
 
         public void CreateYprogram(YouthProgram youthProgram);
+
+        public void DeleteYprogram(int id);
 
 
 

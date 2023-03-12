@@ -80,7 +80,44 @@ namespace Masjid.Services
             _context.SaveChanges();
         }
 
+        public void DeleteYprogram(int id)
+        {
+            var youthProgram = _context.YouthPrograms.Find(id);
+           if(youthProgram!=null) _context.YouthPrograms.Remove(youthProgram);
+            _context.SaveChanges();
+        }
+        public void DeleteEvent(int id)
+        {
+            var even = _context.Events.Find(id);
+            if (even != null) _context.Events.Remove(even);
+            _context.SaveChanges();
 
+        }
+
+        void IProfile.DeleteFeed(int id)
+        {
+            var feed=_context.Feeds.Find(id);
+            if(feed != null) _context.Feeds.Remove(feed);
+            _context.SaveChanges();
+           
+        }
+
+        void IProfile.DeleteIslamicClass(int id)
+        {
+            var islamicClasse = _context.IslamicClasses.Find(id);
+            if (islamicClasse != null) _context.IslamicClasses.Remove(islamicClasse);
+            _context.SaveChanges();
+           
+        }
+
+        void IProfile.DeleteAftSchool(int id)
+        {
+            var aftSchoolProgram = _context.AftSchoolPrograms.Find(id);
+            if (aftSchoolProgram != null) _context.AftSchoolPrograms.Remove(aftSchoolProgram);
+            _context.SaveChanges();
+            
+
+        }
     }
 }
 

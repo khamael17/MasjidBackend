@@ -30,6 +30,13 @@ namespace Masjid.Controllers.Api
             return new JsonResult("propre");
         }
 
+        [HttpDelete("{id}")]
+        public IActionResult DeleteEv(int id)
+        {
+            _profile.DeleteEvent(id);
+            return NoContent();
+        }
+
 
     }
 }

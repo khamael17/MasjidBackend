@@ -9,7 +9,7 @@ namespace Masjid.Controllers.Api
     [ApiController]
     public class AftSchlProgramController : ControllerBase
     {
-        private readonly IProfile _profile;
+        public IProfile _profile;
 
 
         public AftSchlProgramController( IProfile profile)
@@ -19,10 +19,24 @@ namespace Masjid.Controllers.Api
         }
 
 
+        [HttpGet]
+        public IEnumerable<string> Get()
+        {
+            return new string[] { "value1", "value2" };
+        }
+
         [HttpPost]
-        public IActionResult CreateProgram(AftSchoolProgram aftSchoolProgram) {
+        public IActionResult CreateProgram([FromBody]AftSchoolProgram aftSchoolProgram) {
             _profile.CreateAftSchool(aftSchoolProgram);
         return new JsonResult(new {Success = true});
         }
+
+        [HttpDelete("{id}")]
+        public IActionResult DeleteAftSchool(int id)
+        {
+            _profile.DeleteAftSchool(id);
+            return NoContent();
+        }
+
     }
 }

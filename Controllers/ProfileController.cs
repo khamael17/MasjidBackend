@@ -9,10 +9,12 @@ namespace Masjid.Controllers
     {
         private readonly ILogger<ProfileController> _logger;
         private readonly IProfile _profile;
-        public ProfileController(ILogger<ProfileController> logger, IProfile prof)
+        private readonly IHome _home;
+        public ProfileController(ILogger<ProfileController> logger, IProfile prof, IHome home)
         {
             _logger = logger;
             _profile = prof;
+            _home= home;
         }
 
 
@@ -49,6 +51,7 @@ namespace Masjid.Controllers
 
         public ActionResult Create()
         {
+            ViewBag.FirstName = _home.GetImam.Imam_Last_Name;
             return View();
         }
 
@@ -293,23 +296,24 @@ namespace Masjid.Controllers
             }
         }
 
-        [HttpPost]
-        public ActionResult Create(Event view_model)
-        {
-            try
-            {
-                //   var b = even.IsValid();
-                //if(even.IsValid())  _profile.CreateEvent(even);
+        //[HttpPost]
+        //public ActionResult Create(Event view_model)
+        //{
+        //    try
+        //    {
+               
+        //        //   var b = even.IsValid();
+        //        //if(even.IsValid())  _profile.CreateEvent(even);
 
-                return View("Create");
+        //        return View("Create");
 
 
-            }
-            catch
-            {
-                return View();
-            }
-        }
+        //    }
+        //    catch
+        //    {
+        //        return View();
+        //    }
+        //}
 
         // POST: ProfileController/Create
         //[HttpPost]

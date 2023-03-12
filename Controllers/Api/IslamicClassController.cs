@@ -25,5 +25,11 @@ namespace Masjid.Controllers.Api
             _profile.CreateIslamicClass(model);
             return new JsonResult(new {Success=true});
         }
+        [HttpDelete("{id}")]
+        public IActionResult DeleteIslamicClass(int id)
+        {
+            _profile.DeleteIslamicClass(id);
+            return NoContent();
+        }
     }
 }

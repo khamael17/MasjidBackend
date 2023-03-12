@@ -1,4 +1,5 @@
 ﻿using Masjid.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace Masjid.Services
 {
@@ -19,11 +20,11 @@ namespace Masjid.Services
 
       
 
-       public  List<Event>? GetEvents =>  _context.Events.ToList();
+       public  List<Event>? GetEvents =>  _context.Events.FromSql($"select top(2) * from events order by EventId DESC").ToList();
 
-        public Institution? GetInstitutions => _context.Intitutions.FirstOrDefault();
+        public Institution? GetInstitutions => _context.Intitutions.FromSql($"select top(1) * from Intitutions order by InstitutionId DESC").FirstOrDefault();
 
-        public Imam? GetImam => _context.Imams.FirstOrDefault();
+        public Imam? GetImam => _context.Imams.FromSql($"select top(1) * from Imams order by ImamId DESC").FirstOrDefault();
 
         public List<YouthProgram>? GetYouthProgram => _context.YouthPrograms.ToList();
          

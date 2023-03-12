@@ -42,13 +42,13 @@
             }
             if (!context.Intitutions.Any())
             {
-                context.Add(new Institution { InstitutionName = "Lansing Islamic Center" });
+                context.Add(new Institution { InstitutionName = "Lansing Islamic Center", Institution_Email = "koproject@hotmail.com" });
 
             }
 
             if (!context.Imams.Any())
             {
-                context.Add( new Imam { Imam_Last_Name = "Imam Khalilou" } );
+                context.Add( new Imam { Imam_Last_Name = "Konate" , Imam_First_Name="Khalilou"} );
             }
 
             if (!context.Events.Any())

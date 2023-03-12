@@ -10,6 +10,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - Masjid</title>
 
+
+    <script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
     <link rel="stylesheet" href="~/css/main.css" asp-append-version="true" />
     <link rel="stylesheet"
           href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -114,7 +117,7 @@
                 <div class="prof">
                     <img src="~/img/imam.png" alt="" class="img-thumbnail rounded-circle d-md-block" />
                 </div>
-                <a class="" asp-area="" asp-controller="Profile" asp-action="Create"><h7 class="imam-nav-name"><u>Imam  @Model.GetProfile.LastName</u></h7></a>
+                <a class="" asp-area="" asp-controller="Profile" asp-action="Create"><h7 class="imam-nav-name"><u>Imam  @Model.GetImam.Imam_Last_Name</u></h7></a>
             </div>
         </nav>
     </header>
